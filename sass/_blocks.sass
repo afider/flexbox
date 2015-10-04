@@ -1,0 +1,330 @@
+%bszbb
+	+box-sizing(border-box)
+
+/* svg-icons
+/* --------------------------------------------- */
+
+#svg-icons
+	position: absolute
+	top: 0
+	left: 0
+	height: 0
+	width: 0
+	z-index: -100
+
+
+/* svg-icons
+/* ---------------------------------------END--- */
+
+
+/* section
+/* --------------------------------------------- */
+
+.section
+	//margin: auto
+	max-width: $page_w_max
+	padding: 5vh
+	@extend %bszbb
+	width: 100%
+	
+
+/* section
+/* ---------------------------------------END--- */
+
+/* page
+/* --------------------------------------------- */
+
+.page
+	padding: 5vh
+	display: flex
+	flex-direction: column
+	align-items: center
+	min-height: 100vh
+	@extend %bszbb
+
+	&__body
+		background: #fff
+		flex-grow: 1
+		border: 1px solid $main_color1
+
+	&_index &__body
+		display: flex
+		align-items: center
+		justify-content: center
+		
+
+
+
+/* page
+/* ---------------------------------------END--- */
+
+
+
+/* footer
+/* --------------------------------------------- */
+
+.footer
+	height: 50px
+	//background: #DDF7BB
+	flex-shrink: 0
+	display: flex
+	align-items: center
+	color: #fff
+	//text-shadow: 0 0 1px #000
+
+	&__i
+		flex-grow: 0
+		//background: #F3D4D4
+		margin-right: 10px
+
+	&__a
+		position: relative
+		+link-color ($color_hover: #fff, $color_visited: none)
+
+
+
+		&_gitgub
+			margin-left: 30px
+
+	&__icon
+		width: 20px
+		height: 20px
+		color: #000
+		position: absolute
+		top: 50%
+		margin-top: -10px
+		left: -30px
+
+/* footer
+/* ---------------------------------------END--- */
+
+
+/* middle-center
+/* --------------------------------------------- */
+
+.middle-center
+	width: 50%
+	//background: #D3AFEE
+	text-align: center
+	padding: 20px
+
+	+max-screen($mq_1)
+		display: block
+		width: 90%
+
+
+/* middle-center
+/* ---------------------------------------END--- */
+
+
+/* main-nav
+/* --------------------------------------------- */
+
+.main-nav
+	margin: auto
+	margin-bottom: 40px
+
+	+max-screen($mq_2)
+		margin-bottom: 15px
+
+	&__lst
+		//background: #E0EFE3
+		margin: 0
+		padding: 0
+		list-style-type: none
+		display: flex
+
+		+max-screen($mq_2)
+			flex-direction: column
+			align-items: center
+
+	&__i
+		margin: 0
+		padding: 0
+
+		&:last-child
+			margin-left: auto
+			+max-screen($mq_2)
+				margin-left: 0
+
+		+max-screen($mq_2)
+			margin-bottom: 10px
+			
+		
+	&__a
+		+link-color ($color: #fff, $color_hover: #fff, $color_visited: none)
+		display: inline-block
+		border-bottom: none
+		padding: 0 10px
+		height: 36px
+		line-height: 38px
+		background: $main_color1_3
+		width: 100px
+		text-align: center
+		border-radius: 4px
+		text-transform: uppercase
+		font-weight: bold
+		+transition-property(background)
+		@extend %font-narrow
+	
+		&_active,
+		&:hover
+			background: $main_color1_2
+
+		&_active,			
+		&:active
+			@include box-shadow(inset 0px 2px 8px rgba(#000, .4))
+
+
+	&__icon
+		width: 20px
+		height: 20px
+		display: inline-block
+		margin-right: 6px
+		position: relative
+
+		&_tv
+			top: 2px
+
+		&_book
+			top: 4px
+			
+
+
+
+/* main-nav
+/* ---------------------------------------END--- */
+
+
+/* main-h
+/* --------------------------------------------- */
+
+.main-h
+	margin-bottom: -32px
+	text-align: center
+	+max-screen($mq_2)
+		margin-bottom: 25px
+	
+	& &__a
+		+link-color ($color_visited: none)
+		border-bottom: none
+		outline: none
+		display: inline-block
+
+
+/* main-h
+/* ---------------------------------------END--- */
+
+
+/* logo
+/* --------------------------------------------- */
+
+.logo
+	display: block
+	margin: auto
+	margin-top: 10px
+	width: 143px
+	height: 37px
+	//background: red
+
+.logo
+	text
+		+rem(font-size, 50px)
+
+.logo__settings
+	position: absolute
+	top: 0
+	left: 0
+	height: 1px
+	width: 1px
+ 
+
+/* logo
+/* ---------------------------------------END--- */
+
+
+/* video
+/* --------------------------------------------- */
+
+.video
+	
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+		display: flex
+		justify-content: space-between
+		flex-direction: row
+		flex-wrap: wrap
+
+		
+	&__i
+		flex-grow: 1
+		width: 20%
+		min-width: 300px
+		margin: 0 $content_bottom_space $content_bottom_space 0
+		padding: 0
+		@include box-shadow(0px 2px 8px rgba(#000, .4))
+
+	&__video
+		margin-bottom: 5px
+
+	&__legend
+		padding: 10px
+
+	&__name
+		@extend %font-narrow
+		font-weight: bold
+		+rem(font-size, 20px)
+		line-height: 1.3
+		margin-bottom: 5px
+
+	&__a
+		+link-color ($color_visited: none)
+
+/* video
+/* ---------------------------------------END--- */
+
+
+/* fluid-video
+/* --------------------------------------------- */
+
+.fluid-video
+	position: relative
+	padding-bottom: 56.25%
+	padding-top: 25px
+	height: 0
+	iframe
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+
+
+/* fluid-video
+/* ---------------------------------------END--- */
+
+
+/* articles
+/* --------------------------------------------- */
+
+.articles
+	&__lst
+		margin: 0 0 0 25px
+		padding: 0
+		
+		
+	&__i
+		margin: 0 0 30px 0
+		padding: 10px
+		
+	&__name
+		@extend %font-narrow
+		font-weight: bold
+		+rem(font-size, 20px)
+		line-height: 1.3
+		margin-bottom: 10px
+
+/* articles
+/* ---------------------------------------END--- */

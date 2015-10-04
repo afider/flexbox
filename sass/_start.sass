@@ -1,0 +1,127 @@
+html
+	@include rem-baseline
+
+body
+	background: #A8CCDB
+	color: $text_color
+	font-family: $font_main
+	line-height: 1.6
+	+rem(font-size, 15px)
+
+
+
+p
+	margin: 0 0 $content_bottom_space 0
+
+ul
+	margin: 0 0 $content_bottom_space -20px
+
+ol
+	margin: 0 0 $content_bottom_space -20px
+
+ul li,
+ol li
+	margin-bottom: 8px
+
+
+/*  Headers
+/*  -------------------------------------------- */
+
+#{headings(1, 6)}
+	margin: 35px 0 20px 0
+	padding: 0
+	line-height: 1.2
+	font-weight: bold
+	@extend %font-narrow
+	text-align: center
+
+#{headings(1, 1)}
+	+rem(font-size, 30px)
+	margin-bottom: 30px
+	margin-top: 0
+
+
+#{headings(2, 2)}
+	+rem(font-size, 20px)
+	margin-bottom: 35px
+
+#{headings(3, 6)}
+	+rem(font-size, 17px)
+
+
+/* Headers
+/* ---------------------------------------END--- */
+
+
+/* font-2
+/* --------------------------------------------- */
+
++font-face( $family: "PT Sans", $file_name_r: "PTS55F_W", $file_name_i: "PTS56F_W", $file_name_b: "PTS75F_W", $file_name_bi: "PTS76F_W")
+
++font-face( $family: "PT Sans Caption", $file_name_r: "PTC55F_W", $file_name_b: "PTC75F_W")
++font-face( $family: "PT Sans Narrow", $file_name_r: "PTN57F_W", $file_name_b: "PTN77F_W")
+
+%font-caption
+	font-family: 'PT Sans Caption', $font_main
+
+.font-caption
+	@extend %font-caption
+
+%font-narrow
+	font-family: 'PT Sans Narrow', $font_main
+
+.font-narrow
+	@extend %font-narrow
+
+	
+/* Section name
+/* ---------------------------------------END--- */
+
+
+/* Links
+/* --------------------------------------------- */
+
+a, .u
+	text-decoration: none
+	border-bottom-width: 1px
+	border-bottom-style: solid
+
+	+link-color ($color: $link_color, $color_hover: $link_color_hover, $color_visited: $link_color_visited, $animation-time: $link_animation-time)
+
+	&:focus
+		outline: thin dotted
+
+
+.dashed,
+.dotted
+	cursor: pointer
+
+
+.dashed
+	border-bottom-style: dashed
+
+.dotted
+	border-bottom-style: dotted
+
+/* Links
+/* -------------------------------------END----- */
+
+::-moz-selection
+	background: $selection_bg
+	text-shadow: none
+
+::selection
+	background: $selection_bg
+	text-shadow: none
+
+hr
+	display: block
+	margin: 1em 0
+	padding: 0
+	height: 1px
+	border: 0
+	border-top: 1px solid #ccc
+
+textarea
+	resize: vertical
+

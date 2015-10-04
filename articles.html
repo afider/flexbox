@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html lang="ru-RU">
+
+<head> 
+	<meta charset="utf-8"> 
+	<title>Изучаем Flexbox</title>
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<link rel="stylesheet" href="css/common.css">
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/svg.js"></script>
+</head>
+
+<body>
+	<div id="svg-icons"></div>
+
+	<div class="page">
+
+		<article class="page__body section">
+		
+			<header class="header">
+				<h1 class="main-h">
+					<a href="index.html" class="main-h__a">
+
+						Про
+						<svg class="logo__settings">
+								
+							<defs>
+								
+								<filter id='inset-shadow'>
+						
+									<!-- Сдвиг тени -->
+									<feOffset dx='0' dy='1'	/>
+						
+									<!-- Размытие тени -->
+									<feGaussianBlur stdDeviation='1' result='offset-blur' />
+						
+									<!-- Инвертируем drop shadow чтобы создать внутреннюю тень -->
+									<feComposite operator='out' in='SourceGraphic' in2='offset-blur' result='inverse' />
+						
+									<!-- Цвет и Прозрачность -->
+									<feFlood flood-color='black' flood-opacity='.45' result='color'	/>
+						
+									<!-- Обрезаем цвет внутрь тени -->
+									<feComposite operator='in' in='color' in2='inverse' result='shadow' />
+						
+									<!-- Раcполагаем тень поверх элемента -->
+									<feComposite operator='over' in='shadow' in2='SourceGraphic' />
+								</filter>
+						
+								<linearGradient id="logo-gradient">
+									<stop offset="0%" stop-color="#0773A2" />
+									<stop offset="25%" stop-color="#0773A2" />
+									<stop offset="100%" stop-color="#BDEF78" />
+								</linearGradient>
+						
+							</defs>
+								
+						</svg>
+								
+						<svg class="logo">
+							<text x="0" y="100%" fill="url(#logo-gradient)" filter="url('#inset-shadow')">Flexbox</text>
+						</svg>
+
+					</a>
+				</h1>
+			</header>
+					
+			<nav class="main-nav">
+				<ul class="main-nav__lst">
+					<li class="main-nav__i">
+						<a href="videos.html" class="main-nav__a">
+							<svg class="main-nav__icon main-nav__icon_tv">
+								<use xlink:href="#icon_tv"></use>
+							</svg>
+							Видео
+						</a>
+					</li>
+					<li class="main-nav__i">
+						<a href="articles.html" class="main-nav__a main-nav__a_active">
+							<svg class="main-nav__icon main-nav__icon_book">
+								<use xlink:href="#icon_book"></use>
+							</svg>
+							Статьи
+						</a>
+					</li>
+				</ul>
+			</nav>
+
+			<h2 class="h1">Статьи в блогах и журналах</h2>
+
+			<div class="articles">
+				<ol class="articles__lst">
+					<li class="articles__i">
+						<div class="articles__name">
+							<a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" class="articles__a">A Complete Guide to Flexbox</a>
+						</div>
+						<div class="articles__description">
+							Статья-гайд Криса Койера, в которой он очень наглядно с изображениями и примерами разобрал практически все по Flexbox.
+						</div>
+						<div class="articles__translation">
+							<a href="http://frontender.info/a-guide-to-flexbox/">Перевод</a> в журнале <a href="http://frontender.info/">Frontender</a>
+						</div>
+					</li>
+					<li class="articles__i">
+						<div class="articles__name">
+							<a href="http://html5.by/blog/flexbox/" class="articles__a">Что такое Flexbox? Описание всех css свойств, основные принципы, преимущества и недостатки.</a>
+						</div>
+						<div class="articles__description">
+							Очень подробная статья на <a href="http://html5.by/">html5.by</a> от Дмитрия Дудина
+						</div>
+						<div class="articles__translation">
+							<a href="http://frontender.info/a-guide-to-flexbox/">Перевод</a> в журнале <a href="http://frontender.info/">Frontender</a>
+						</div>
+					</li>
+					<li class="articles__i">
+						<div class="articles__name">
+							<a href="http://www.smashingmagazine.com/2015/08/flexible-future-for-web-design-with-flexbox/" class="articles__a">Laying Out A Flexible Future For Web Design With Flexbox</a>
+						</div>
+						<div class="articles__description">
+							Статья Бена Гремилиона (Ben Gremillion), в журнале <a href="http://www.smashingmagazine.com/">Smashing Magazine</a> очень наглядно и по полочкам обяснены основы, а также рассматривается пример верстки стандартного трех-колоночного макета.
+						</div>
+					</li>
+					<li class="articles__i">
+						<div class="articles__name">
+							<a href="https://philipwalton.github.io/solved-by-flexbox/" class="articles__a">Solved by Flexbox</a>
+						</div>
+						<div class="articles__description">
+							Сборник типовых и не только решений от <a href="http://philipwalton.com/">Филиппа Волтона</a> (Philip Walton). Трехколоночный лейаут «Святой грааль», система сетки, прижатый к низу футер, вертикальное центрирование блоков и другое.
+						</div>
+					</li>
+					<li class="articles__i">
+						<div class="articles__name">
+							<a href="https://bocoup.com/weblog/dive-into-flexbox/" class="articles__a">Dive into Flexbox</a>
+						</div>
+						<div class="articles__description">
+							Статья <a href="https://twitter.com/_its_greg">Грега Смита</a> (Greg Smith) про основы. Довольно основательно и подробно.
+						</div>
+					</li>
+					<li class="articles__i">
+						<div class="articles__name">
+							<a href="http://updates.html5rocks.com/2013/10/Flexbox-layout-isn-t-slow" class="articles__a">Flexbox layout isn't slow</a>
+						</div>
+						<div class="articles__description">
+							Статья, в которой <a href="http://www.paulirish.com/">Пол Айриш</a> (Paul Irish) обясняет на сколько медленный или не медленный Flexbox.
+						</div>
+					</li>
+					<li class="articles__i">
+						<div class="articles__name">
+							<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" class="articles__a">Using CSS flexible boxes</a>
+						</div>
+						<div class="articles__description">
+							Обяснение работы с Flexbox от команды разработчиков Mozilla.
+						</div>
+					</li>
+					<li class="articles__i">
+						<div class="articles__name">
+							<a href="https://dev.opera.com/articles/view/flexbox-basics/" class="articles__a">Flexbox — Fast Track to Layout Nirvana?</a>
+						</div>
+						<div class="articles__name">
+							<a href="https://dev.opera.com/articles/advanced-cross-browser-flexbox/" class="articles__a">Advanced Cross-Browser Flexbox</a>
+						</div>
+						<div class="articles__description">
+							Серия статей от разработчика из компании Opera <a href="https://dev.opera.com/authors/chris-mills/">Криса Миллса</a> (Chris Mills)
+						</div>
+					</li>
+					<li class="articles__i">
+						<div class="articles__name">
+							<a href="http://jonibologna.com/flexbox-cheatsheet/" class="articles__a">Flexbox Cheatsheet Cheatsheet</a>
+						</div>
+						<div class="articles__description">
+							Статья-подсказка от Джони Трайтала (Joni Trythall).
+						</div>
+						<div class="articles__translation">
+							<a href="http://css-live.ru/articles-css/shpargalka-po-shpargalke-po-flexbox.html">Перевод</a> команды <a href="http://css-live.ru/">css-live.ru</a>
+						</div>
+					</li>
+				</ol>
+			</div><!-- articles -->
+
+			<h2>Генераторы и другие онлайн-ресурсы</h2>
+
+			<div class="articles">
+				<ol class="articles__lst">
+					<li class="articles__i">
+						<div class="articles__name">
+							<a href="http://bennettfeely.com/flexplorer/" class="articles__a">Flexplorer</a>
+						</div>
+						<div class="articles__description">
+							Площадка на которой можно поиграться с различными свойствами.
+						</div>
+					</li>
+					<li class="articles__i">
+						<div class="articles__name">
+							<a href="http://the-echoplex.net/flexyboxes/" class="articles__a">Flexy boxes</a>
+						</div>
+						<div class="articles__description">
+							Генератор раскладки.
+						</div>
+					</li>
+				</ol>
+			</div><!-- articles -->
+		
+		</article><!-- page__body -->
+		
+		<footer class="footer section">
+			
+			<div class="footer__i">
+		
+				<a href="#" class="footer__a footer__a_gitgub">
+					<svg class="footer__icon">
+						<use xlink:href="#icon_github"></use>
+					</svg>
+					GitHub
+				</a>
+		
+			</div>
+		
+		</footer>
+
+	</div><!-- page -->
+	<script src="js/common.js"></script>
+</body>
+
+</html>
+

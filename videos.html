@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="ru-RU">
+
+<head> 
+	<meta charset="utf-8"> 
+	<title>Изучаем Flexbox</title>
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<link rel="stylesheet" href="css/common.css">
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/svg.js"></script>
+</head>
+
+<body>
+	<div id="svg-icons"></div>
+
+	<div class="page">
+
+		<article class="page__body section">
+		
+			<header class="header">
+				<h1 class="main-h">
+					<a href="index.html" class="main-h__a">
+
+						Про
+						<svg class="logo__settings">
+								
+							<defs>
+								
+								<filter id='inset-shadow'>
+						
+									<!-- Сдвиг тени -->
+									<feOffset dx='0' dy='1'	/>
+						
+									<!-- Размытие тени -->
+									<feGaussianBlur stdDeviation='1' result='offset-blur' />
+						
+									<!-- Инвертируем drop shadow чтобы создать внутреннюю тень -->
+									<feComposite operator='out' in='SourceGraphic' in2='offset-blur' result='inverse' />
+						
+									<!-- Цвет и Прозрачность -->
+									<feFlood flood-color='black' flood-opacity='.45' result='color'	/>
+						
+									<!-- Обрезаем цвет внутрь тени -->
+									<feComposite operator='in' in='color' in2='inverse' result='shadow' />
+						
+									<!-- Раcполагаем тень поверх элемента -->
+									<feComposite operator='over' in='shadow' in2='SourceGraphic' />
+								</filter>
+						
+								<linearGradient id="logo-gradient">
+									<stop offset="0%" stop-color="#0773A2" />
+									<stop offset="25%" stop-color="#0773A2" />
+									<stop offset="100%" stop-color="#BDEF78" />
+								</linearGradient>
+						
+							</defs>
+								
+						</svg>
+								
+						<svg class="logo">
+							<text x="0" y="100%" fill="url(#logo-gradient)" filter="url('#inset-shadow')">Flexbox</text>
+						</svg>
+
+					</a>
+				</h1>
+			</header>
+
+			<nav class="main-nav">
+				<ul class="main-nav__lst">
+					<li class="main-nav__i">
+						<a href="videos.html" class="main-nav__a main-nav__a_active">
+							<svg class="main-nav__icon main-nav__icon_tv">
+								<use xlink:href="#icon_tv"></use>
+							</svg>
+							Видео
+						</a>
+					</li>
+					<li class="main-nav__i">
+						<a href="articles.html" class="main-nav__a">
+							<svg class="main-nav__icon main-nav__icon_book">
+								<use xlink:href="#icon_book"></use>
+							</svg>
+							Статьи
+						</a>
+					</li>
+				</ul>
+			</nav>
+
+			<h2 class="h1">Видео-подкасты и доклады с разных конференций</h2>
+
+			<div class="video">
+				<ul class="video__lst">
+					<li class="video__i ">
+						<div class="video__video fluid-video">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/x0fcNDaE7Z0" frameborder="0" allowfullscreen></iframe>
+						</div>
+						<div class="video__legend">
+							<div class="video__name">CodeFest 2013. Вадим Макеев (Opera Software): «Flexbox, теперь понятно»</div>
+							<div class="video__property">
+								<a href="http://pepelsbey.net/pres/flexbox-gotcha/" class="video__a">Презентация</a>
+							</div>
+						</div>
+					</li>
+					<li class="video__i ">
+						<div class="video__video fluid-video">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/2ujfOyJE7zk" frameborder="0" allowfullscreen></iframe>
+						</div>
+						<div class="video__legend">
+							<div class="video__name">4front meetup. Дмитрий Радыно: «Flexbox - верстка без float'ов»</div>
+							<div class="video__property">
+								<a href="http://www.slideshare.net/radyno/flexbox-39134410?ref=http://xbsoftware.ru/blog/4front-meetup-3-flexbox-typescript-javascript-grunt/" class="video__a">Презентация</a>
+							</div>
+						</div>
+					</li>
+					<li class="video__i ">
+						<div class="video__video fluid-video">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/NEnaKAoKSp0" frameborder="0" allowfullscreen></iframe>
+						</div>
+						<div class="video__legend">
+							<div class="video__name">SmartWeb 2014. Zoe Gillenwater: «Leveling Up With Flexbox»</div>
+							<div class="video__property">
+								<a href="http://zomigi.com/blog/leveling-up-with-flexbox/" class="video__a">Презентация</a>
+							</div>
+						</div>
+					</li>
+					<li class="video__i ">
+						<div class="video__video fluid-video">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/3j6v2rx1N1Y?list=PLViEVGYYiL-UsaP4VG26m3othI_OFbSjD" frameborder="0" allowfullscreen></iframe>
+						</div>
+						<div class="video__legend">
+							<div class="video__name">FrontTalks 2014. Арсений Форштретер (Яндекс): «Гибкие коробки на практике»</div>
+							<div class="video__property">
+								<a href="http://docslide.us/technology/-5462141aaf7959fd5a8b5a24.html" class="video__a">Презентация</a>
+							</div>
+						</div>
+					</li>
+					<li class="video__i ">
+						<div class="video__video fluid-video">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/G7EIAgfkhmg" frameborder="0" allowfullscreen></iframe>
+						</div>
+						<div class="video__legend">
+							<div class="video__name">DevTips. Travis Neilson: «CSS FlexBox Essentials»</div>
+						</div>
+					</li>
+					<li class="video__i ">
+						<div class="video__video fluid-video">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/H1lREysgdgc" frameborder="0" allowfullscreen></iframe>
+						</div>
+						<div class="video__legend">
+							<div class="video__name">DevTips. Travis Neilson: «CSS FlexBox Practical Examples»</div>
+							Воссоздание лейаута Dribbble.com с использованием FlexBox
+						</div>
+					</li>
+					<li class="video__i ">
+						<div class="video__video fluid-video">
+							<iframe src="https://player.vimeo.com/video/124796320" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						</div>
+						<div class="video__legend">
+							<div class="video__name">SmashingConf Oxford 2015. Zoe Gillenwater: «Enhancing Responsiveness with Flexbox»</div>
+							<div class="video__property">
+								<a href="http://www.slideshare.net/zomigi/enhancing-responsiveness-with-flexbox-smashing-conference" class="video__a">Презентация</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div><!-- video -->
+		
+		</article><!-- page__body -->
+		
+		<footer class="footer section">
+			
+			<div class="footer__i">
+		
+				<a href="#" class="footer__a footer__a_gitgub">
+					<svg class="footer__icon">
+						<use xlink:href="#icon_github"></use>
+					</svg>
+					GitHub
+				</a>
+		
+			</div>
+		
+		</footer>
+
+	</div><!-- page -->
+	<script src="js/common.js"></script>
+</body>
+
+</html>
+
