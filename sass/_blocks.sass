@@ -26,6 +26,9 @@
 	padding: 5vh
 	@extend %bszbb
 	width: 100%
+
+	+max-screen($mq_2)
+		padding: 10px
 	
 
 /* section
@@ -41,6 +44,9 @@
 	align-items: center
 	min-height: 100vh
 	@extend %bszbb
+
+	+max-screen($mq_2)
+		padding: 3px
 
 	&__body
 		background: #fff
@@ -265,6 +271,9 @@
 		margin: 0 $content_bottom_space $content_bottom_space 0
 		padding: 0
 		@include box-shadow(0px 2px 8px rgba(#000, .4))
+
+		+max-screen($mq_2)
+			margin-right: 0
 
 	&__video
 		margin-bottom: 5px
